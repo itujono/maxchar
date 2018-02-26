@@ -1,0 +1,16 @@
+{
+  "name": "maxchar",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "itujono <itujono@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "dev": "parcel index.html"
+  },
+  "dependencies": {
+    "bulma": "^0.6.2"
+  },
+  "devDependencies": {
+    "node-sass": "^4.7.2"
+  }
+}
