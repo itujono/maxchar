@@ -5,15 +5,15 @@ export default function maxCharFn(str) {
   const strCleaned = str.replace(/\s/g,'').toLowerCase()
   
   for (let char of strCleaned) {
-    charMap[char] = charMap[char] ? charMap[char] + 1 : 1;
+    charMap[char] = charMap[char] ? charMap[char] + 1 : 1
   }
   
   for (let char in charMap) {
     if (charMap[char] > amount) {
-       amount = charMap[char];
-       maxChar = char;
+       amount = charMap[char]
+       maxChar = char
     }
   }
   
-  return [maxChar, amount];
+  return [maxChar, amount]
 }
