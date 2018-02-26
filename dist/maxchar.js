@@ -69,7 +69,7 @@ require = (function (modules, cache, entry) {
 
   // Override the current require with this new one
   return newRequire;
-})({49:[function(require,module,exports) {
+})({7:[function(require,module,exports) {
 var bundleURL = null;
 function getBundleURLCached() {
   if (!bundleURL) {
@@ -100,7 +100,7 @@ function getBaseURL(url) {
 exports.getBundleURL = getBundleURLCached;
 exports.getBaseURL = getBaseURL;
 
-},{}],4:[function(require,module,exports) {
+},{}],5:[function(require,module,exports) {
 var bundle = require('./bundle-url');
 
 function updateLink(link) {
@@ -132,19 +132,19 @@ function reloadCSS() {
 
 module.exports = reloadCSS;
 
-},{"./bundle-url":49}],5:[function(require,module,exports) {
+},{"./bundle-url":7}],6:[function(require,module,exports) {
 
         var reloadCSS = require('_css_loader');
         module.hot.dispose(reloadCSS);
         module.hot.accept(reloadCSS);
       
-},{"_css_loader":4}],3:[function(require,module,exports) {
+},{"_css_loader":5}],3:[function(require,module,exports) {
 
         var reloadCSS = require('_css_loader');
         module.hot.dispose(reloadCSS);
         module.hot.accept(reloadCSS);
       
-},{"_css_loader":4}],52:[function(require,module,exports) {
+},{"_css_loader":5}],4:[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -170,6 +170,8 @@ function maxCharFn(str) {
 
   return [maxChar, amount];
 }
+},{}],53:[function(require,module,exports) {
+module.exports="/dist/fd45417b5877be5034c93f62a0fc7f8c.png";
 },{}],2:[function(require,module,exports) {
 "use strict";
 
@@ -183,14 +185,20 @@ var _script = require("./script");
 
 var _script2 = _interopRequireDefault(_script);
 
+var _sun = require("./sun.png");
+
+var _sun2 = _interopRequireDefault(_sun);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function renderResult(str) {
+  const textArea = document.querySelector(".textarea");
   const val = document.querySelector(".textarea").value;
   const result = document.querySelector(".result");
   const charResult = (0, _script2.default)(val);
 
   if (val) {
+    textArea.classList.remove("is-danger");
     result.innerHTML = `
           <div class="content">
             <ul>
@@ -199,11 +207,23 @@ function renderResult(str) {
             </ul>
           </div>
         `;
+  } else {
+    textArea.classList.add("is-danger");
   }
 }
 
 document.querySelector(".trigger").addEventListener("click", renderResult);
-},{"bulma":5,"./style.scss":3,"./script":52}],0:[function(require,module,exports) {
+
+document.querySelector(".clear-form").addEventListener("click", () => {
+  let textArea = document.querySelector(".textarea");
+  let result = document.querySelector(".result");
+
+  console.log("Mak! Terapus wak!");
+
+  textArea.value = "";
+  result.innerHTML = "";
+});
+},{"bulma":6,"./style.scss":3,"./script":4,"./sun.png":53}],0:[function(require,module,exports) {
 var global = (1, eval)('this');
 var OldModule = module.bundle.Module;
 function Module() {
@@ -221,7 +241,7 @@ function Module() {
 module.bundle.Module = Module;
 
 if (!module.bundle.parent && typeof WebSocket !== 'undefined') {
-  var ws = new WebSocket('ws://' + window.location.hostname + ':65299/');
+  var ws = new WebSocket('ws://' + window.location.hostname + ':49528/');
   ws.onmessage = function(event) {
     var data = JSON.parse(event.data);
 

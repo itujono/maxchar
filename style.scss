@@ -38,6 +38,23 @@ body {
     }
 }
 
+.image {
+    margin-bottom: 1.4em;
+    img {
+        animation: rotator 10s infinite linear;
+        width: 50px;
+    }
+}
+
+@keyframes rotator {
+    from {
+        transform: rotate(0)
+    }
+    to {
+        transform: rotate(360deg)
+    }
+}
+
 
 
 

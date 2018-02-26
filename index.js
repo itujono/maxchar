@@ -3,14 +3,18 @@ import "./style.scss"
 
 import maxCharFn from "./script"
 
+import sun from "./sun.png"
+
 
 
 function renderResult(str) {
+    const textArea = document.querySelector(".textarea");
     const val = document.querySelector(".textarea").value;
     const result = document.querySelector(".result");
     const charResult = maxCharFn(val);
 
     if (val) {
+        textArea.classList.remove("is-danger")      
         result.innerHTML = `
           <div class="content">
             <ul>
@@ -19,8 +23,20 @@ function renderResult(str) {
             </ul>
           </div>
         `
+    } else {
+      textArea.classList.add("is-danger")
     }
 }
 
 
 document.querySelector(".trigger").addEventListener("click", renderResult)
+
+document.querySelector(".clear-form").addEventListener("click", () => {
+    let textArea = document.querySelector(".textarea");
+    let result = document.querySelector(".result");
+
+    console.log("Mak! Terapus wak!")
+    
+    textArea.value = "";
+    result.innerHTML = ""
+})
