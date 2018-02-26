@@ -40,3 +40,11 @@ document.querySelector(".clear-form").addEventListener("click", () => {
     textArea.value = "";
     result.innerHTML = ""
 })
+
+document.querySelector(".stack-info").addEventListener("mouseenter", () => {
+    document.querySelector(".modal-info").style.display = "block"
+})
+
+document.querySelector(".stack-info").addEventListener("mouseleave", () => {
+    document.querySelector(".modal-info").style.display = "none"
+})

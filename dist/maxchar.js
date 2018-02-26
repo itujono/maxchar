@@ -223,6 +223,14 @@ document.querySelector(".clear-form").addEventListener("click", () => {
   textArea.value = "";
   result.innerHTML = "";
 });
+
+document.querySelector(".stack-info").addEventListener("mouseenter", () => {
+  document.querySelector(".modal-info").style.display = "block";
+});
+
+document.querySelector(".stack-info").addEventListener("mouseleave", () => {
+  document.querySelector(".modal-info").style.display = "none";
+});
 },{"bulma":6,"./style.scss":3,"./script":4,"./sun.png":53}],0:[function(require,module,exports) {
 var global = (1, eval)('this');
 var OldModule = module.bundle.Module;
