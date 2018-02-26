@@ -41,10 +41,15 @@ document.querySelector(".clear-form").addEventListener("click", () => {
     result.innerHTML = ""
 })
 
-document.querySelector(".stack-info").addEventListener("mouseenter", () => {
-    document.querySelector(".modal-info").style.display = "block"
+document.querySelector(".stack-info").addEventListener("mouseover", () => {
+    document.querySelector(".modal-info").classList.add("visible")
 })
 
 document.querySelector(".stack-info").addEventListener("mouseleave", () => {
-    document.querySelector(".modal-info").style.display = "none"
+    document.querySelector(".modal-info").classList.remove("visible")
+})
+
+document.querySelector(".stack-info").addEventListener("click", () => {
+    const modal = document.querySelector(".modal-info")
+    modal.classList.contains("visible") ? modal.classList.remove("visible") : modal.classList.add("visible")
 })

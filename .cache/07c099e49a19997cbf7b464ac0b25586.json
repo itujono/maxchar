@@ -1,0 +1,1 @@
+{"dependencies":[],"generated":{"js":"\"use strict\";function e(e){let t={},o=0,r=\"\";const s=e.replace(/\\s/g,\"\").toLowerCase();for(let e of s)t[e]=t[e]?t[e]+1:1;for(let e in t)t[e]>o&&(o=t[e],r=e);return[r,o]}Object.defineProperty(exports,\"__esModule\",{value:!0}),exports.default=e;"},"hash":"8f2c5ad4fb97ae250c3da38251bab293"}
